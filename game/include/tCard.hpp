@@ -9,7 +9,8 @@
 //! \brief Object representing a Cluedo card.
 //! \details Can be one of three different types of card: Guest, Room, or Weapon card.
 struct tCard {
-	enum class eType : unsigned char { guest, room, weapon };						//!< Enum describing card types
+	//! Enum describing card types
+	enum class eType : unsigned char { guest, room, weapon };
 	using tTypeIterator = tEnumIterator<eType, eType::guest, eType::weapon>;
 	friend std::ostream &operator<<(std::ostream &os, const tCard::eType &type);
 
