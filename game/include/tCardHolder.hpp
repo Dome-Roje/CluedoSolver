@@ -1,5 +1,5 @@
 #pragma once
 
 struct tCardHolder {
-    int m_numberOfCards;
+	int m_numberOfCards;
 };
