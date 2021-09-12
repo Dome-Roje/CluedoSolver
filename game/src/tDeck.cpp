@@ -2,6 +2,8 @@
 #include "tCard.hpp"
 #include "tGame.hpp"
 
+//! \details Iterate through defined iterators for guests, rooms, and weapons
+//! and generate a card based off of those values.
 tDeck::tDeck() {
 	for (tGame::eGuest guest : tGame::tGuestIterator()) {
 		m_numberOfGuests++;

@@ -8,6 +8,10 @@
 
 class tPlayer;
 
+//! \brief Cluedo game-logic.
+//! \details The structure defining all game objects such as
+//! the Guests, Rooms, Weapons. It also contains the players, the cards they use as well
+//! as the crime.
 class tGame {
 public:
 	enum class eGuest : unsigned char { green, mustard, peacock, plum, scarlet, white };
@@ -65,7 +69,7 @@ public:
 	tCrime m_crime;
 
 	tGame();
-	void start();
+	void start(); //!< Public call to start the game. Runs the main loop.
 	void addPlayer(tPlayer &player);
 
 	static eGuest getGuestInput();
@@ -83,7 +87,7 @@ public:
 	tCard *getCard(eWeapon &weapon);
 
 private:
-	void play();
+	void play(); //!< Game mainloop.
 	void endGame();
 	void killPlayer(tPlayer &player);
 	void broadcastRumorResponse(tRumor &rumor, tPlayer &respondant, eRumorResponse &response);

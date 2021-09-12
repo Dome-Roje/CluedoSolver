@@ -2,6 +2,7 @@
 
 #include "tPlayer.hpp"
 
+//! \brief Placeholder player that gets input from an observing player.
 struct tObservedPlayer : public tPlayer {
 	tObservedPlayer(std::string name, tGame &game) : tPlayer(name, game) {}
 	tObservedPlayer(tGame &game) : tPlayer(game) {}

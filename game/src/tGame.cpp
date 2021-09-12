@@ -7,6 +7,8 @@
 
 tGame::tGame() : m_deck(), m_crime() {}
 
+//! \details Computes the number of cards each player should have
+//! and distributes them by asking players to observe their hand.
 void tGame::start() {
 	int numberOfCardsPerPlayer = (m_deck.size() - 3) / m_players.size();
 	for (tPlayer *player : m_players) {
@@ -16,6 +18,7 @@ void tGame::start() {
 	play();
 }
 
+//! \details Places the players in order.
 void tGame::addPlayer(tPlayer &player) { m_players.push_back(&player); }
 
 tGame::eGuest tGame::getGuestInput() {
@@ -87,6 +90,8 @@ void tGame::clearScreen() {
 		std::cout << std::endl;
 }
 
+//! \details First asks for the type of card and then for the instance
+//! of that kind of card.
 tCard *tGame::getCard() {
 	clearScreen();
 	int i = 0;
@@ -138,6 +143,8 @@ tCard *tGame::getCard(eWeapon &weapon) {
 	return NULL;
 }
 
+//! \details Iterates through living players and queries their actions.
+//! Then iterates through all playerse to query their response.
 void tGame::play() {
 	mp_activePlayer = m_players.front();
 	while (!m_gameOver) {

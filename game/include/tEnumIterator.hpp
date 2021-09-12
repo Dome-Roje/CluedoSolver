@@ -2,6 +2,7 @@
 
 #include <type_traits>
 
+//! \brief Templated Iterator for enums.
 template <typename C, C beginVal, C endVal> class tEnumIterator {
 	typedef typename std::underlying_type<C>::type val_t;
 	int val;
